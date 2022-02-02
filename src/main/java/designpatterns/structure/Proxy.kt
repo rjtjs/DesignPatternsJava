@@ -73,11 +73,9 @@ class ProxyAccount(private val console: ClientConsole): Account {
         if (passwordIsCorrect) {
             // Everything looks good, now communicate over the wire with the real account, and print details.
             realAccount.printBalance()
-            return
         } else {
             println("Maximum password attempts reached, locking account.")
             accountState = AccountState.LOCKED
-            return
         }
     }
 }
